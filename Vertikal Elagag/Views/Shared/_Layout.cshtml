@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Vertikal Elagage</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link href="~/Content/materialize/css/materialize.min.css" rel="stylesheet"
+          type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="~/Content/fontawesome.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/a9869f94dd.js"></script>
+
+
+
+</head>
+<body>
+    @*<div id="navbar_header" class="navbar_header"></div>*@
+    <div id="navbar_fixed" class="navbar-fixed navbar_padding">
+        <nav class="nav-extended">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Logo</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">@Ajax.ActionLink("Accueil", "Index", "Home", null, new { @class = "tab c" })</li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "active" : "")">@Ajax.ActionLink("Qui sommes-nous ?", "About", "Home", null, new { @class = "tab ajaxLink" })</li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Pruning" ? "active" : "")">@Ajax.ActionLink("Elagage", "Pruning", "Home", null, new { @class = "tab" })</li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Felling" ? "active" : "")">@Ajax.ActionLink("Abbatage", "Felling", "Home", null, new { @class = "tab" })</li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Landscaping" ? "active" : "")">@Ajax.ActionLink("Paysagisme", "Landscaping", "Home", null, new { @class = "tab" })</li>
+                    <li>@Html.ActionLink("Galerie", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Galerie", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container body-content">
+        <div id="renderbody">
+            @RenderBody()
+        </div>
+           
+            <hr />
+
+        </div>
+        <footer class="layout_footer">
+            <div class="row mb-0">
+                <div class="col-12 col-md-4 p-2 p-md-3 d-flex align-items-center flex-column">
+                    <h4>Social</h4>
+                    <p>Suivez nous sur les réseaux sociaux pour prendre connaissance de nos projets et chantiers sur l'île !</p>
+                    <p>Vous pourrez y voir nos dernières réalisations, avec des photos comparatives !</p>
+                    <div class="row mt-4 mt-md-0">
+                        <div class="col-12 p-0 p-md-3 d-flex flex-row justify-content-around">
+                            <div class="social_round">
+                                <i class="fa fa-facebook-f social_icon"></i>
+                            </div>
+                            <div class="social_round">
+                                <i class="fa fa-instagram social_icon"></i>
+                            </div>
+                            <div class="social_round">
+                                <i class="fa fa-twitter social_icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 p-2 p-md-3 d-flex align-items-center flex-column">
+                    <h4>Horaires</h4>
+                    <div class="d-flex justify-content-between align-items-center w-90 w-md-50 opening_time_container">
+                        <p class="opening_time">Lundi-jeudi</p>
+                        <p>07h00 - 17h00</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center w-90 w-md-50 opening_time_container">
+                        <p class="opening_time">Vendredi</p>
+                        <p>07h00 - 16h00</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center w-90 w-md-50 opening_time_container">
+                        <p class="opening_time">Samedi</p>
+                        <p>08h00 - 12h00</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 p-2 p-md-3 d-flex align-items-center flex-column">
+                    <h4>Contact</h4>
+                    <div class="d-flex justify-content-between align-items-center w-90 opening_time_container">
+                        <p class="opening_time">Adresse</p>
+                        <p>Piton saint-leu</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center w-90 w-md-50 opening_time_container">
+                        <p class="opening_time">Téléphone</p>
+                        <p>+262 692 92 64 77</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center w-90 w-md-50 opening_time_container">
+                        <p class="opening_time">Email</p>
+                        <p>velluetl@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <span>&copy; @DateTime.Now.Year - Lucas Velluet  Vertikal Elagage 974 La Réunion</span>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+        @*  <script src="~/Scripts/customScript.js" language="javascript" type="text/javascript"></script>*@
+       @* <script>
+            $(".ajaxLink").click(function () {
+                $.ajax({
+                    url: '/Home/About',
+                    success: function (data) {
+                        $("#renderbody").html(data);
+                    }
+                })
+            })
+        </script>*@
+</body>
+</html>

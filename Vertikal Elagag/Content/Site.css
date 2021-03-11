@@ -1,0 +1,179 @@
+﻿body {
+    font-family: "Roboto Condensed",sans-serif;
+}
+
+strong {
+    font-weight: bold!important;
+}
+
+.container {
+    width: 95% !important;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+    font-family: "Gotu",sans-serif;
+    margin: 40px 0px 30px 0px !important;
+}
+
+h3 {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 600 !important;
+    margin-top: 0 !important;
+}
+
+
+p {
+    margin: 0;
+    line-height: 1.7;
+    font-size: 16px;
+    text-align: justify;
+    text-justify: auto;
+}
+
+.about_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.about_col1 {
+    max-height: 600px;
+}
+
+.about_col2 {
+    max-height: 420px;
+}
+
+.about_col3 {
+    max-height: 450px;
+}
+
+.steps_image {
+    max-height: 400px;
+}
+
+.pruning_col_1 {
+    max-height: 480px;
+}
+
+.pruning_col_2 {
+    max-height: 540px;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.step_para {
+    text-align: center !important;
+}
+
+.cutting_list {
+    margin-left: 30px;
+}
+
+.cutting_list_li {
+    list-style-type: disc !important;
+}
+
+.cutting_sublist_li {
+    list-style-type: circle !important;
+}
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+nav {
+    background-color: #559857 !important;
+}
+
+.tab:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar_padding {
+    margin-bottom: 25px;
+}
+
+.navbar_header {
+    height: 100px;
+    background-color: black;
+    position: fixed;
+    /*   top: 0;*/
+    width: 100%;
+}
+
+.layout_footer {
+    background-color: #559857 !important;
+}
+
+.social_round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    transition: all .2s ease-in-out;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0px 15px;
+}
+
+.social_round:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.social_icon {
+    font-size: 25px!important;
+}
+
+.opening_time_container {
+    margin-bottom: 40px;
+    width: 50%;
+}
+
+.opening_time {
+    font-weight: 600;
+}
+
+@media (max-width: 767.98px) {
+    h1 {
+        font-size: 30px !important;
+        margin: 30px 0px 10px 0px !important;
+    }
+
+    h3 {
+        font-size: 25px !important;
+    }
+
+    .title_container {
+        display: none;
+    }
+
+    .cutting_list {
+        margin-left: 13px;
+    }
+
+    .opening_time_container {
+        width: 90%!important;
+    }
+}
